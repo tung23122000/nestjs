@@ -9,11 +9,26 @@ export class ProductsService {
         @InjectRepository(Product) private readonly productRepository: Repository<Product>,
     ) {}
 
-    insertProduct(product: Product) {
-        return this.productRepository.save(product);
+    create(prduct: Product){
+        return this.productRepository.save(prduct);
     }
 
-    findAll() {
-        return this.productRepository.find();
+    getlist(){
+        return this.productRepository.find ();
+    }
+
+    getOne (id: number){
+
+        return this.productRepository.findOneBy({id})
+    }
+        
+    edit(id: number, prduct: Product){
+        this.productRepository.delete(id);
+       return this.productRepository.save(prduct)
+    }
+
+    remove(id: number){
+        return this.productRepository.delete(id);
+
     }
 }
