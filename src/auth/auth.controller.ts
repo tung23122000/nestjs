@@ -6,13 +6,13 @@ export class AuthController {
 
     constructor(private authService: AuthService){}
 
-    @Post('login')
-    singup(){
-        return this.authService.login();
-    }
+    // @Post('login')
+    // singup(){
+    //     return this.authService.login();
+    // }
 
-    @Post('logout')
-    singout(){
-        return this.authService.logout();
-    }
+    // @Post('logout')
+    // singout(){
+    //     return this.authService.logout();
+    // }
 }
